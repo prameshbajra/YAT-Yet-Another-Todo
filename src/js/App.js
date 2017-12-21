@@ -40,9 +40,9 @@ class App extends Component {
     }
     handleAddOption = (option) => {
         if (!option) {
-            return 'Ohh! Please add a valid option.';
+            return 'Please enter a valid option.';
         } else if (this.state.options.indexOf(option) >= 0) {
-            return "Let's keep it DRY, no duplication.";
+            return "Let's not keep duplicates.";
         }
         this.setState(prevState => ({
             // ES6 syntax for updating the array and adding option to previous readymade array ...

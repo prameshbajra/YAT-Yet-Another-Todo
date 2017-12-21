@@ -22,12 +22,12 @@ class AddOptions extends Component {
             <div>
                 {this.state.error && <p className="widget-message">{this.state.error}</p>}
                 <form className="widget-form" onSubmit={this.formHandler}>
-                    <input className="widget-input" type="text" name="option" placeholder="Enter your todo here ..." />
+                    <input className="widget-input" type="text" name="option" placeholder="Enter your todo here ..." autoComplete="off" />
                     <button className="button-ok" type="submit">Enter</button>
                 </form>
                 <h6 className="small-footer">Made with Love And React </h6>
                 <h6 className="small-footer">
-                    <a href="http://bajracharya.me" target="_blank" rel="noopener noreferrer">
+                    <a href="http://bajracharya.me" target="_blank" rel="noopener noreferrer" >
                         (Pramesh Bajracharya)
                     </a>
                 </h6>

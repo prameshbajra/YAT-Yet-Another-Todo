@@ -4,15 +4,16 @@ import Modal from 'react-modal';
 
 const OptionModal = props => (
     <Modal
+      className="react-modal"
       isOpen={!!props.selectedOption}
       contentLabel="Selected Option"
       ariaHideApp={false}
       closeTimeoutMS={800}
     >
-        <h3>Here you go.</h3>
-        {props.selectedOption && <p>{props.selectedOption}</p>}
+        {props.selectedOption && <h2>{props.selectedOption}</h2>}
+        <br /><br />
         <button
-          className="button-done"
+          className="modal-button"
           onClick={props.handleSelectedOption}
         >OK, Thanks!
         </button>

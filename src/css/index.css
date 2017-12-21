@@ -46,19 +46,6 @@ button:disabled {
     opacity: 0.5;
 }
 
-.big-button-remove {
-    background: #8357c5;
-    border: none;
-    border-bottom: 0.2rem solid purple;
-    color: purple;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-left: 25%;
-    margin-bottom: 1.2rem;
-    padding: 1rem;
-    width: 50%;
-}
-
 .button-remove {
     background: none;
     border: none;
@@ -135,6 +122,9 @@ button:disabled {
 }
 
 .ReactModalPortal .ReactModal__Overlay {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     transition: opacity 800ms ease-in-out;
 }
 
@@ -144,4 +134,25 @@ button:disabled {
 
 .ReactModalPortal .ReactModal__Overlay--before-close {
     opacity: 0;
+}
+
+.ReactModal__Content,
+.ReactModal__Content--after-open,
+.react-modal {
+    background: #20222b;
+    border-bottom: purple;
+    max-width: 30rem;
+    outline: none;
+    padding: 3rem;
+    text-align: center;
+}
+
+.modal-button {
+    background: #8357c5;
+    border: none;
+    border-bottom: 0.2rem solid purple;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    width: 80%;
 }
