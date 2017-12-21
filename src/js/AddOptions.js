@@ -20,11 +20,13 @@ class AddOptions extends Component {
     render() {
         return (
             <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.formHandler}>
-                    <input type="text" name="option" />
-                    <button type="submit">Add</button>
+                {this.state.error && <p className="widget-message">{this.state.error}</p>}
+                <form className="widget-form" onSubmit={this.formHandler}>
+                    <input className="widget-input" type="text" name="option" placeholder="Enter your todo here ..." />
+                    <button className="button-ok" type="submit">Enter</button>
                 </form>
+                <h6 className="small-footer">Made with Love And React </h6>
+                <h6 className="small-footer"><a href="www.bajracharya.me" target="_blank">(Pramesh Bajracharya)</a></h6>
             </div>
         );
     }

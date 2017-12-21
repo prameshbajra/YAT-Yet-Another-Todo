@@ -58,7 +58,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 <Header />
                 <Actions
                   hasOption={this.state.options.length > 0}

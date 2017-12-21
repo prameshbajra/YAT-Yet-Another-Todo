@@ -1,0 +1,125 @@
+* {
+    font-family: Operator Mono Lig, Courier New, Courier, monospace;
+    background: #20222b;
+    color: purple;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    color: white;
+    margin-bottom: 1.2rem;
+    padding: 1.6rem 0;
+}
+
+.header h1 {
+    color: aliceblue;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+/* For buttons */
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.big-button-action {
+    background: #8357c5;
+    border: none;
+    border-bottom: 0.2rem solid purple;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 25%;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    width: 50%;
+}
+
+.big-button-action:disabled {
+    opacity: 0.5;
+}
+
+.big-button-remove {
+    background: #8357c5;
+    border: none;
+    border-bottom: 0.2rem solid purple;
+    color: purple;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 25%;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    width: 50%;
+}
+
+.button-remove {
+    background: none;
+    border: none;
+    color: gray;
+}
+
+.button-ok {
+    background: #8357c5;
+    border: none;
+    border-bottom: 0.2rem solid purple;
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+
+/* For the options part = widget header */
+
+.widget-header {
+    background: #3c4251;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 47.5%;
+}
+
+.widget-header h3 {
+    background: #3c4251;
+    color: white;
+}
+
+.widget-body,
+.widget-message {
+    background: #464b5e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 47.5%;
+}
+
+.widget-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.4rem auto;
+    width: 50%;
+}
+
+.widget-input {
+    border: 1px solid #8357c5;
+    border-bottom: 0.2rem solid purple;
+    color: white;
+    font-size: 1rem;
+    padding: 0.9rem;
+    width: 100%;
+}
+
+.small-footer {
+    text-align: center;
+    margin: 0 auto;
+}
