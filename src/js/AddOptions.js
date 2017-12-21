@@ -26,7 +26,11 @@ class AddOptions extends Component {
                     <button className="button-ok" type="submit">Enter</button>
                 </form>
                 <h6 className="small-footer">Made with Love And React </h6>
-                <h6 className="small-footer"><a href="www.bajracharya.me" target="_blank">(Pramesh Bajracharya)</a></h6>
+                <h6 className="small-footer">
+                    <a href="http://bajracharya.me" target="_blank" rel="noopener noreferrer">
+                        (Pramesh Bajracharya)
+                    </a>
+                </h6>
             </div>
         );
     }

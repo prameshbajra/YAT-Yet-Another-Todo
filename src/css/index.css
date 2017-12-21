@@ -119,7 +119,29 @@ button:disabled {
     width: 100%;
 }
 
+
+/* For footer text */
+
 .small-footer {
     text-align: center;
     margin: 0 auto;
+}
+
+
+/* For react modal */
+
+.ReactModalPortal>div {
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    transition: opacity 800ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
 }

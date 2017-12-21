@@ -6,6 +6,8 @@ const OptionModal = props => (
     <Modal
       isOpen={!!props.selectedOption}
       contentLabel="Selected Option"
+      ariaHideApp={false}
+      closeTimeoutMS={800}
     >
         <h3>Here you go.</h3>
         {props.selectedOption && <p>{props.selectedOption}</p>}
