@@ -30,6 +30,11 @@ class AddOptions extends Component {
                     <a href="http://bajracharya.me" target="_blank" rel="noopener noreferrer" >
                         (Pramesh Bajracharya)
                     </a>
+                    <br /><br /><br />
+                    There might be some small problem in deletion.
+                    You might have to refresh the page for deletion to take effect.
+                    <br />
+                    Why call it a bug? When we can call it a feature ...
                 </h6>
             </div>
         );

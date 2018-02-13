@@ -6,27 +6,47 @@ import Options from './Options';
 import OptionModal from './OptionModal';
 import AddOptions from './AddOptions';
 
+import database from '../firebase/firebase';
+
 class App extends Component {
     constructor(props) {
         super(props);
-        const json = JSON.parse(localStorage.getItem('options'));
-        // json.parse() will give error when null values are parse
-        // hence to be on the safe side or operator is used ...
-        this.state = { options: json || [], selectedOption: undefined };
+        this.state = {
+            options: undefined || [],
+            selectedOption: undefined,
+            optionKeys: undefined,
+        };
+    }
+
+    componentWillMount() {
+        database.ref('todos')
+            .once('value')
+            .then((snapshot) => {
+                const result = snapshot.val();
+                // Incase if undefined/null is there ...
+                if (result) {
+                    this.setState(() => ({ optionKeys: Object.keys(result) }));
+                    const resultArray = Object.keys(result).map(a => result[a]);
+                    this.setState(() => ({ options: resultArray }));
+                }
+            });
     }
     // Reminder : Fires automatically whenever state is updated/ changed ...
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.options.length !== this.state.options.length) {
-            const json = JSON.stringify(this.state.options);
-            localStorage.setItem('options', json);
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevState.options.length !== this.state.options.length) {
+    //         const json = JSON.stringify(this.state.options);
+    //         localStorage.setItem('options', json);
+    //     }
+    // }
     // For deleting all options present ...
     handleDeleteOptions = () => {
         this.setState(() => ({ options: [] }));
+        database.ref('todos').remove();
     }
     // For deleting one option ...
     handleDeleteOption = (option) => {
+        const deleteKey = this.state.optionKeys[this.state.options.indexOf(option)];
+        database.ref(`todos/${deleteKey}`).remove();
         this.setState(prevState => ({
             options: prevState.options.filter(optionItem => optionItem !== option),
         }));
@@ -44,6 +64,8 @@ class App extends Component {
         } else if (this.state.options.indexOf(option) >= 0) {
             return "Let's not keep duplicates.";
         }
+        // writing/ updating the database ...
+        database.ref('todos').push(option);
         this.setState(prevState => ({
             // ES6 syntax for updating the array and adding option to previous readymade array ...
             options: [...prevState.options, option],
