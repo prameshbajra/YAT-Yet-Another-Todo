@@ -46,7 +46,9 @@ class App extends Component {
     // For deleting one option ...
     handleDeleteOption = (option) => {
         const deleteKey = this.state.optionKeys[this.state.options.indexOf(option)];
-        database.ref(`todos/${deleteKey}`).remove();
+        if (deleteKey) {
+            database.ref(`todos/${deleteKey}`).remove();
+        }
         this.setState(prevState => ({
             options: prevState.options.filter(optionItem => optionItem !== option),
         }));
